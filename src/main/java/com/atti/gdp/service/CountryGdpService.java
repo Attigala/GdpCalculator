@@ -33,7 +33,7 @@ public class CountryGdpService {
 		growthRate.setGrowthRate(Double.valueOf(growthRate(countryGdpList)));
 		return growthRate;
 	}
-	
+	//Assuming growth rate is calculated using (currentgdp - previousgdp)/previousgdp * 100
 	private double growthRate(List <CountryGdp>countryGdpList) {
 		return  (countryGdpList.get(0).getValue() - countryGdpList.get(1).getValue()) / countryGdpList.get(1).getValue() * 100;
 	}

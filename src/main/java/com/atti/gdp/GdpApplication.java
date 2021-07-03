@@ -25,6 +25,7 @@ public class GdpApplication {
 	
 	@PostConstruct
 	public void loadData() {
+		//load dataset if data not exist in database
 		List<CountryGdp> records = (List<CountryGdp>) gdpRepository.findAll();
 		if(records.isEmpty()) {
 			ClassLoader classLoader = getClass().getClassLoader();
