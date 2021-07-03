@@ -12,13 +12,16 @@ import com.atti.gdp.service.CountryGdpService;
 @RestController
 @RequestMapping("/growthrate")
 public class GrowthRateController {
-	
+
 	@Autowired
 	private CountryGdpService countryGdpService;
-	
+
 	@GetMapping
-	public GrowthRateDto getGrowthRateByCountryCdAndYear(@RequestParam String countrycd, @RequestParam int year ) {
+	public GrowthRateDto getGrowthRateByCountryCdAndYear(@RequestParam String countrycd, @RequestParam int year)
+			throws Exception {
+
 		return countryGdpService.getGrowthRateByCountryAndYear(countrycd, year);
+
 	}
 
 }
